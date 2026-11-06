@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{amsmath}
 \usepackage{amsthm}
 {\theoremstyle{definition}
 \newtheorem{definicija}{Definicija}
@@ -70,7 +71,7 @@ Prirejeno po:
    stolpca ali vsa števila v katerikoli od glavnih diagonal.
 \end{definicija}
 
-Primer magičnega kvadrata reda 3 je prikazan v tabeli ??. % sklic: table:mag3
+Primer magičnega kvadrata reda 3 je prikazan v tabeli \ref{table:mg}. % sklic: table:mag3
 
 % - napis nad tabelo: Magični kvadrat reda 3
 % - oznaka: table:mag3
@@ -95,12 +96,13 @@ Primer magičnega kvadrata reda 3 je prikazan v tabeli ??. % sklic: table:mag3
 \begin{definicija}
    Magični kvadrat reda \(n\) je \emph{normalen}, če v njem nastopajo števila
    \begin{equation}
+      \label{eq:numbers}
       % oznaka: eq:numbers
       1, 2, 3, \ldots, n^2-1, n^2.
    \end{equation}
 \end{definicija}
 
-Magični kvadrat v tabeli ?? je normalen.
+Magični kvadrat v tabeli \ref{table:mag3} je normalen.
 To je tudi najmanjši netrivialen normalen magični kvadrat.
 Poleg normalnih magičnih kvadratov so zanimivi tudi magični kvadrati praštevil. % sklic: table:mag3
 
@@ -180,6 +182,7 @@ in zato kvadrat ni normalen.
      Magična konstanta normalnega magičnega kvadrata reda \(n\)
      je enaka
      \begin{equation}
+      \label{eq:mc}
         % oznaka: eq:mc
         % Okolje `equation` je že prikazni matematični način,
         % zato tu izraz vpišite brez `\[` in `\]`.
@@ -192,14 +195,14 @@ in zato kvadrat ni normalen.
 
 \begin{proof}
       V normalnem magičnem kvadratu reda \(n\) je vsota vseh nastopajočih
-      števil (glej ?? na strani ??) enaka
+      števil (glej \eqref{eq:numbers} na strani \pageref{eq:numbers}) enaka
    \(1+2+3+\cdots+n^2=\sum_{k=1}^{n^2}k=\frac{1}{2}n^2(n^2+1)\). Ker imamo
       v kvadratu \(n\) vrstic z enako vsoto, je vsota števil v eni vrstici
       enaka številu \(\mathcal{M}_2(n)\). % sklica: eq:numbers, eq:numbers
 \end{proof}
 % Konec dokaza
 
-Preprost račun pokaže, da je konstanti ?? analogna konstanta
+Preprost račun pokaže, da je konstanti \eqref{eq:mc} analogna konstanta
 \(\mathcal{M}_2(n;A,D)\) za magični kvadrat, v katerem so nameščena števila
 \(A\), \(A+D\), \(A+2D\), \ldots, \(A+(n^2-1)D\), enaka % sklic: eq:mc
 \[
@@ -217,7 +220,7 @@ Preprost račun pokaže, da je konstanti ?? analogna konstanta
       iz drugega s pomočjo zasukov oziroma zrcaljenj.
 \end{definicija}
 
-Števila različnih normalnih magičnih kvadratov se nahajajo v tabeli ??.
+Števila različnih normalnih magičnih kvadratov se nahajajo v tabeli \ref{table:stevila}.
 % sklic: table:stevila
 
 % - napis nad tabelo: Število različnih normalnih magičnih kvadratov
