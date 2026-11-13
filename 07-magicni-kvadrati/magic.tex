@@ -20,6 +20,7 @@
 
 \newcommand{\m}{\mathcal{M}_2}
 \newcommand{\pojem}[1]{\emph{\color{purple}#1}}
+\newenvironment{dokaz}{\begin{proof}[Dokaz izreka]}{\end{proof}}
 
 \theoremstyle{definition}
 \newtheorem{definicija}{Definicija}
@@ -236,13 +237,13 @@ in zato kvadrat ni normalen.
    \end{equation}
 \end{izrek}
 
-\begin{proof}
+\begin{dokaz}
    V normalnem magičnem kvadratu reda \(n\) je vsota vseh nastopajočih
    števil (glej \eqref{eq:numbers} na strani \pageref{eq:numbers}) enaka
    \(1+2+3+\ldots+n^2=\sum_{k=1}^{n^2}k=\frac{1}{2}n^2(n^2+1)\). Ker imamo
    v kvadratu \(n\) vrstic z enako vsoto, je vsota števil v eni vrstici
    enaka številu \(\m(n)\).
-\end{proof}
+\end{dokaz}
 
 Preprost račun pokaže, da je konstanti \eqref{eq:mc} analogna konstanta
 \(\m(n;A,D)\) za magični kvadrat, v katerem so nameščena števila
