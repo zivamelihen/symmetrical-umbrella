@@ -12,12 +12,14 @@
 
 \usepackage{booktabs}
 \usepackage{siunitx}
+\usepackage{xcolor}
 \sisetup{output-decimal-marker={,}, group-digits=integer, group-minimum-digits=4}
 
 \setlength{\belowcaptionskip}{2mm}
 \setlength{\parindent}{0mm}
 
 \newcommand{\m}{\mathcal{M}_2}
+\newcommand{\pojem}[1]{\emph{\color{purple}#1}}
 
 \theoremstyle{definition}
 \newtheorem{definicija}{Definicija}
@@ -57,7 +59,7 @@ Prirejeno po:
 \section{Uvod}
 
 \begin{definicija}
-   \emph{Magični kvadrat} reda \(n\) je nabor \(n^2\) različnih števil,
+   \pojem{Magični kvadrat} reda \(n\) je nabor \(n^2\) različnih števil,
    ki so razvrščena v kvadratno tabelo tako, da vedno dobimo enako vsoto,
    če seštejemo vsa števila poljubne vrstice, vsa števila poljubnega
    stolpca ali vsa števila v katerikoli od glavnih diagonal.
@@ -84,7 +86,7 @@ Primer magičnega kvadrata reda 3 je prikazan v tabeli~\ref{table:mag3}.
 % Do tu: tretji argument ukaza newenvironment
 
 \begin{definicija}
-   Magični kvadrat reda \(n\) je \emph{normalen}, če v njem nastopajo števila
+   Magični kvadrat reda \(n\) je \pojem{normalen}, če v njem nastopajo števila
    \begin{equation}
       \label{eq:numbers}
       1, 2, 3, \ldots, n^2-1, n^2.
@@ -222,7 +224,7 @@ in zato kvadrat ni normalen.
 
 \begin{definicija}
    Vsoto ene vrstice, enega stolpca ali ene od glavnih diagonal
-   v magičnem kvadratu imenujemo \emph{magična konstanta}.
+   v magičnem kvadratu imenujemo \pojem{magična konstanta}.
 \end{definicija}
 
 \begin{izrek}
@@ -253,7 +255,7 @@ Kvadratu v tabeli ?!? ustrezata konstanti \(A=20\) in \(D=1\). % sklic: table:ku
 \begin{definicija}
    Če vsako od števil v normalnem magičnem kvadratu reda \(n\) odštejemo
    od števila \(n^2+1\), dobimo nov magični kvadrat, ki je prvotnemu
-   \emph{komplementaren}.
+   \pojem{komplementaren}.
 \end{definicija}
 
 Na primer, magičnemu kvadratu Lo Shu (glej tabelo ?!?) priredimo
@@ -272,7 +274,7 @@ Vidimo, da je dobljeni kvadrat moč dobiti iz kvadrata Lo Shu tudi z zasukom za
 iz kvadrata Lo Shu z zrcaljenjem preko sredinske vodoravne črte. % sklic: table:mag3
 
 \begin{definicija}
-   Pravimo, da sta dva magična kvadrata \emph{različna}, če enega ni mogoče dobiti
+   Pravimo, da sta dva magična kvadrata \pojem{različna}, če enega ni mogoče dobiti
    iz drugega s pomočjo zasukov oziroma zrcaljenj.
 \end{definicija}
 
