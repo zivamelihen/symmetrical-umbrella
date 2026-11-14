@@ -21,7 +21,15 @@
 \newcommand{\m}{\mathcal{M}_2}
 \newcommand{\pojem}[1]{\emph{\color{purple}#1}}
 \newenvironment{dokaz}{\begin{proof}[Dokaz izreka]}{\end{proof}}
-
+\newenvironment{magic}[3]{\begin{table}[!ht]
+   \centering
+   \caption{#2}
+   \label{#3}
+   \large
+   \begin{tabular}{|*{#1}{c|}}
+   \hline}{\end{tabular}
+   \normalsize
+\end{table}}
 \theoremstyle{definition}
 \newtheorem{definicija}{Definicija}
 
@@ -68,23 +76,11 @@ Prirejeno po:
 
 Primer magičnega kvadrata reda 3 je prikazan v tabeli~\ref{table:mag3}.
 
-% Od tu: drugi argument ukaza newenvironment
-\begin{table}[!ht]
-   \centering
-   \caption{Magični kvadrat reda 3}
-   \label{table:mag3}
-   \large
-   \begin{tabular}{|c|c|c|}
-   \hline
-% Do tu: drugi argument ukaza newenvironment
+\begin{magic}{3}{Magični kvadrat reda 3}{table:mag3}
    8 & 1 & 6 \\\hline
    3 & 5 & 7 \\\hline
    4 & 9 & 2 \\\hline
-% Od tu: tretji argument ukaza newenvironment
-   \end{tabular}
-   \normalsize
-\end{table}
-% Do tu: tretji argument ukaza newenvironment
+\end{magic}
 
 \begin{definicija}
    Magični kvadrat reda \(n\) je \pojem{normalen}, če v njem nastopajo števila
@@ -116,11 +112,11 @@ reke.
 
 % - napis nad tabelo: Kvadrat Lo Shu
 % - oznaka: table:loshu
-% Začetek magičnega kvadrata
-%   4 & 9 & 2 \\\hline
-%   3 & 5 & 7 \\\hline
-%   8 & 1 & 6 \\\hline
-% Konec magičnega kvadrata
+\begin{magic}{3}{Kvadrat Lo Shu}{table:loshu}
+      3 & 5 & 7 \\\hline
+      8 & 1 & 6 \\\hline
+      4 & 9 & 2 \\\hline
+\end{magic}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -137,11 +133,11 @@ Lo Shu, vendar je vsako število povečano za 19.
 
 % - napis nad tabelo: Kvadrat Kubera-Kolam
 % - oznaka: table:kubera
-% Začetek magičnega kvadrata
-%   23 & 28 & 21 \\\hline
-%   22 & 24 & 26 \\\hline
-%   27 & 20 & 25 \\\hline
-% Konec magičnega kvadrata
+\begin{magic}{3}{Kvadrat Kubera-Kolam}{table:kubera}
+  23 & 28 & 21 \\\hline
+  22 & 24 & 26 \\\hline
+  27 & 20 & 25 \\\hline
+\end{magic}
 
 Z magičnimi kvadrati so se ukvarjali tudi najbolj znani matematiki kot na
 primer Euler, glej \cite{euler}.
@@ -183,12 +179,12 @@ simetričnih parov (\(2+8+9+15\) in \(3+5+12+14\)), in še na nekaj drugih nači
 %
 % - napis nad tabelo: Dürerjev magični kvadrat \(4\times 4\)
 % - oznaka: table:durer
-% Začetek magičnega kvadrata
-%   16 &  3 &  2 & 13 \\\hline
-%    5 & 10 & 11 &  8 \\\hline
-%    9 &  6 &  7 & 12 \\\hline
-%    4 & 15 & 14 &  1 \\\hline
-% Konec magičnega kvadrata
+\begin{magic}{4}{Dürerjev magični kvadrat \(4\times 4\)}
+   16 &  3 &  2 & 13 \\\hline
+    5 & 10 & 11 &  8 \\\hline
+    9 &  6 &  7 & 12 \\\hline
+    4 & 15 & 14 &  1 \\\hline
+\end{magic}
 
 \paragraph{Pasijonska fasada na katedrali Sagrada família v Barceloni}
 (glej sliko \ref{fig:sagrada} za fotografijo) vsebuje magični kvadrat reda 4.
@@ -212,12 +208,12 @@ in zato kvadrat ni normalen.
 %
 % - napis nad tabelo: Magični kvadrat na Sagradi Famíliji
 % - oznaka: table:sagrada
-% Začetek magičnega kvadrata
-%    1 & 14 & 14 &  4 \\\hline
-%   11 &  7 &  6 &  9 \\\hline
-%    8 & 10 & 10 &  5 \\\hline
-%   13 &  2 &  3 & 15 \\\hline
-% Konec magičnega kvadrata
+\begin{magic}{4}{Magični kvadrat na Sagradi Famíliji}{table:sagrada}
+    1 & 14 & 14 &  4 \\\hline
+   11 &  7 &  6 &  9 \\\hline
+    8 & 10 & 10 &  5 \\\hline
+   13 &  2 &  3 & 15 \\\hline
+\end{magic}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -251,7 +247,7 @@ Preprost račun pokaže, da je konstanti \eqref{eq:mc} analogna konstanta
 \[
    \m(n;A,D) = \frac{1}{2} n \left(2A+D(n^2-1)\right).
 \]
-Kvadratu v tabeli ?!? ustrezata konstanti \(A=20\) in \(D=1\). % sklic: table:kubera
+Kvadratu v tabeli \ref{table:kubera} ustrezata konstanti \(A=20\) in \(D=1\). % sklic: table:kubera
 
 \begin{definicija}
    Če vsako od števil v normalnem magičnem kvadratu reda \(n\) odštejemo
@@ -259,19 +255,19 @@ Kvadratu v tabeli ?!? ustrezata konstanti \(A=20\) in \(D=1\). % sklic: table:ku
    \pojem{komplementaren}.
 \end{definicija}
 
-Na primer, magičnemu kvadratu Lo Shu (glej tabelo ?!?) priredimo
-komplementarni kvadrat, prikazan v tabeli ?!?. % sklic: table:loshu, table:closhu
+Na primer, magičnemu kvadratu Lo Shu (glej tabelo \ref{table:loshu}) priredimo
+komplementarni kvadrat, prikazan v tabeli \ref{table:closhu}. % sklic: table:loshu, table:closhu
 %
 % - napis nad tabelo: Kvadratu Lo Shu komplementarni kvadrat
 % - oznaka: table:closhu
-% Začetek magičnega kvadrata
-%   6 & 1 & 8 \\\hline
-%   7 & 5 & 3 \\\hline
-%   2 & 9 & 4 \\\hline
-% Konec magičnega kvadrata
+\begin{magic}{3}{Kvadratu Lo Shu komplementarni kvadrat}{table:closhu}
+  6 & 1 & 8 \\\hline
+  7 & 5 & 3 \\\hline
+  2 & 9 & 4 \\\hline
+\end{magic}
 
 Vidimo, da je dobljeni kvadrat moč dobiti iz kvadrata Lo Shu tudi z zasukom za
-180 stopinj okrog središča, kvadrat iz tabele ?!? pa je mogoče dobiti
+180 stopinj okrog središča, kvadrat iz tabele \ref{table:mag3} pa je mogoče dobiti
 iz kvadrata Lo Shu z zrcaljenjem preko sredinske vodoravne črte. % sklic: table:mag3
 
 \begin{definicija}
@@ -306,43 +302,43 @@ sta za oceno uporabila simulacijo Monte Carlo in metode statistične mehanike.
 
 \section{Primeri}
 
-V tabelah ?!?, ?!? in ?!? so prikazani
+V tabelah \ref{table:mag5}, \ref{table:mag6} in \ref{table:mag9} so prikazani
 magični kvadrati redov 5, 6 in 9. % sklic: table:mag5, table:mag6, table:mag9
 
 % - napis nad tabelo: Magični kvadrat reda 5
 % - oznaka: table:mag5
-% Začetek magičnega kvadrata
-%   17 & 24 &  1 &  8 & 15 \\\hline
-%   23 &  5 &  7 & 14 & 16 \\\hline
-%    4 &  6 & 13 & 20 & 22 \\\hline
-%   10 & 12 & 19 & 21 &  3 \\\hline
-%   11 & 18 & 25 &  2 &  9 \\\hline
-% Konec magičnega kvadrata
+\begin{magic}{5}{Magični kvadrat reda 5}{table:mag5}
+   17 & 24 &  1 &  8 & 15 \\\hline
+   23 &  5 &  7 & 14 & 16 \\\hline
+    4 &  6 & 13 & 20 & 22 \\\hline
+   10 & 12 & 19 & 21 &  3 \\\hline
+   11 & 18 & 25 &  2 &  9 \\\hline
+\end{magic}
 
 % - napis nad tabelo: Magični kvadrat reda 6
 % - oznaka: table:mag6
-% Začetek magičnega kvadrata
-%    6 & 32 &  3 & 34 & 35 &  1 \\\hline
-%    7 & 11 & 27 & 28 &  8 & 30 \\\hline
-%   19 & 14 & 16 & 15 & 23 & 24 \\\hline
-%   18 & 20 & 22 & 21 & 17 & 13 \\\hline
-%   25 & 29 & 10 &  9 & 26 & 12 \\\hline
-%   36 &  5 & 33 &  4 &  2 & 31 \\\hline
-% Konec magičnega kvadrata
+\begin{magic}{6}{Magični kvadrat reda 6}{table:mag6}
+    6 & 32 &  3 & 34 & 35 &  1 \\\hline
+    7 & 11 & 27 & 28 &  8 & 30 \\\hline
+   19 & 14 & 16 & 15 & 23 & 24 \\\hline
+   18 & 20 & 22 & 21 & 17 & 13 \\\hline
+   25 & 29 & 10 &  9 & 26 & 12 \\\hline
+   36 &  5 & 33 &  4 &  2 & 31 \\\hline
+\end{magic}
 
 % - napis nad tabelo: Magični kvadrat reda 9
 % - oznaka: table:mag9
-% Začetek magičnega kvadrata
-%   47 & 58 & 69 & 80 &  1 & 12 & 23 & 34 & 45 \\\hline
-%   57 & 68 & 79 &  9 & 11 & 22 & 33 & 44 & 46 \\\hline
-%   67 & 78 &  8 & 10 & 21 & 32 & 43 & 54 & 56 \\\hline
-%   77 &  7 & 18 & 20 & 31 & 42 & 53 & 55 & 66 \\\hline
-%    6 & 17 & 19 & 30 & 41 & 52 & 63 & 65 & 76 \\\hline
-%   16 & 27 & 29 & 40 & 51 & 62 & 64 & 75 &  5 \\\hline
-%   26 & 28 & 39 & 50 & 61 & 72 & 74 &  4 & 15 \\\hline
-%   36 & 38 & 49 & 60 & 71 & 73 &  3 & 14 & 25 \\\hline
-%   37 & 48 & 59 & 70 & 81 &  2 & 13 & 24 & 35 \\\hline
-% Konec magičnega kvadrata
+\begin{magic}{9}{Magični kvadrat reda 9}{table:mag9}
+   47 & 58 & 69 & 80 &  1 & 12 & 23 & 34 & 45 \\\hline
+   57 & 68 & 79 &  9 & 11 & 22 & 33 & 44 & 46 \\\hline
+   67 & 78 &  8 & 10 & 21 & 32 & 43 & 54 & 56 \\\hline
+   77 &  7 & 18 & 20 & 31 & 42 & 53 & 55 & 66 \\\hline
+    6 & 17 & 19 & 30 & 41 & 52 & 63 & 65 & 76 \\\hline
+   16 & 27 & 29 & 40 & 51 & 62 & 64 & 75 &  5 \\\hline
+   26 & 28 & 39 & 50 & 61 & 72 & 74 &  4 & 15 \\\hline
+   36 & 38 & 49 & 60 & 71 & 73 &  3 & 14 & 25 \\\hline
+   37 & 48 & 59 & 70 & 81 &  2 & 13 & 24 & 35 \\\hline
+\end{magic}
 
 \newpage
 
